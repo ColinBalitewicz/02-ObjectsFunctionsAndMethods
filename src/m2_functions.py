@@ -18,9 +18,14 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ###############################################################################
 
 import rosegraphics as rg
+import math as math
 
 
 def main():
+    hypotenuse()
+    Turtles(3,'purple')
+    Turtles(9,'black')
+
     """
     TESTS the functions that you will write below.
     You write the tests per the _TODO_s below.
@@ -28,7 +33,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 3a.  Define a function immediately below this _TODO_.
+# DONE: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
@@ -36,14 +41,17 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 3b.  In main, CALL your function and print the returned value,
+# DONE: 3b.  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
-
-
+a=5
+b=5
+def hypotenuse():
+    c = math.sqrt(a**2 + b**2)
+    print(c)
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# DONE: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
@@ -65,11 +73,19 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+# DONE: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
-
+def Turtles(Given1,Given2):
+    window=rg.TurtleWindow()
+    deadly_queen=rg.SimpleTurtle()
+    bites_the_dust=rg.SimpleTurtle()
+    deadly_queen.pen=rg.Pen('green',Given1)
+    bites_the_dust.pen=rg.Pen(Given2,5)
+    deadly_queen.forward(100)
+    bites_the_dust.backward(100)
+    window.close_on_mouse_click()
 
 ###############################################################################
 # TODO: 5.
